@@ -42,11 +42,21 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i <= 5; i++) {
+    console.log(`Round ${i}`);
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
     console.log(`Scores => Human: ${humanScore}, Computer: ${computerScore}`);
+  }
+
+  console.log("Game Over!");
+  if (humanScore > computerScore) {
+    console.log("🎉 You win the game! 🏆");
+  } else if (humanScore < computerScore) {
+    console.log("😢 You lose the game! Better luck next time.");
+  } else {
+    console.log("🤝 It's a tie overall!");
   }
 }
 
